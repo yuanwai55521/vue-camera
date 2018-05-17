@@ -1,0 +1,75 @@
+.resizer-item {
+  border: rgba(0, 0, 255, 0.5) 1px solid !important;
+  overflow: visible !important;
+  .resizer-handler {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    .left {
+      left: -10px;
+      transform+_: translateX(50%);
+    }
+    .right {
+      right: 0;
+      transform+_: translateX(50%);
+    }
+    .center {
+      left: 50%;
+      transform+_: translateX(-50%);
+    }
+    .top {
+      top: -10px;
+      transform+_: translateY(50%);
+    }
+    .bottom {
+      bottom: 0;
+      transform+_: translateY(50%);
+    }
+    .middle {
+      top: 50%;
+      transform+_: translateY(-50%);
+    }
+    &.resizer-e {
+      .right;
+      .middle;
+      cursor: e-resize;
+    }
+    &.resizer-se {
+      .right;
+      .bottom;
+      cursor: nw-resize;
+    }
+    &.resizer-s {
+      .bottom;
+      .center;
+      cursor: n-resize;
+    }
+    &.resizer-w {
+      .middle;
+      .left;
+      cursor: e-resize;
+    }
+    &.resizer-sw {
+      .left;
+      .bottom;
+      cursor: sw-resize;
+    }
+    &.resizer-nw {
+      .left;
+      .top;
+      cursor: nw-resize;
+    }
+    &.resizer-n {
+      .top;
+      .center;
+      cursor: n-resize;
+    }
+    &.resizer-ne {
+      .top;
+      .right;
+      cursor: sw-resize;
+    }
+  }
+}

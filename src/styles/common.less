@@ -1,0 +1,168 @@
+.absolute {
+  position: absolute;
+}
+
+.pos-fit {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0
+}
+
+html {
+  font-size: 12px;
+  font-family: '微软雅黑';
+}
+
+body {
+  .absolute;
+  .pos-fit;
+  overflow: hidden;
+}
+
+.border-gray {
+  border-color: #DDD;
+}
+
+.ivu-table-noxscroll {
+  .ivu-table-body {
+    overflow-x: hidden;
+  }
+}
+
+.ivu-modal {
+  .ivu-modal-body {
+    position: relative;
+  }
+}
+
+//Modal 垂直居中
+.vertical-center-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ivu-modal {
+    top: 0;
+  }
+}
+
+//非模态框所需样式
+.no-modal {
+  position: relative;
+  z-index: 1001;
+  .ivu-modal-mask {
+    display: none;
+  }
+  .ivu-modal-content {
+    box-shadow: 0 0 20px;
+  }
+  .ivu-modal-wrap {
+    display: block;
+    position: static;
+  }
+  .ivu-modal {
+    position: absolute;
+  }
+}
+
+.ivu-modal-wrap {
+  @media screen and (max-width:1367px){
+    .ivu-modal {
+      top: 20px;
+    }
+  }
+  @media screen and (min-width:1367px){
+    display: flex;
+    align-items: center;
+    .ivu-modal {
+      top: 0;
+    }
+  }
+
+}
+
+//修复表格前checkbox后面有奇怪点的问题
+.ivu-table-header .ivu-table-cell .ivu-checkbox-wrapper,
+.ivu-table-tbody .ivu-table-cell .ivu-checkbox-wrapper,
+.custom-table-header .ivu-table-header .ivu-checkbox-wrapper {
+  margin-right: 0;
+}
+
+//修复tab下滑线，错误，和不显示的bug
+.ivu-tabs-bar {
+  .ivu-tabs-tab-active {
+    border-bottom: 3px solid @mainColor;
+  }
+}
+
+//滚动条美化
+.custom-scroll {
+  @width: 6px;
+   ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: @width;
+  }
+   ::-webkit-scrollbar {
+    width: @width;
+    background-color: #F5F5F5;
+  }
+   ::-webkit-scrollbar-thumb {
+    border-radius: @width;
+    background-color: rgba(0, 0, 0, .2);
+  }
+}
+
+.w100p,
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.h50 {
+  height: 50%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.empty:empty {
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  &.empty-stress {
+    color: red;
+    font-size: 1.5rem;
+  }
+  &::after {
+    content: attr(data-emptytext);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.ivu-select-dropdown {
+  z-index: 1010;
+}
+
+.echarts {
+  width: initial !important;
+  height: initial !important;
+  .absolute;
+  .pos-fit;
+}
+
+table.table-fixed {
+  table-layout: fixed;
+}
+// 由于调用js生成的modal没有z-index所以默认这种modal的z-index为1000
+[class="v-transfer-dom"]{
+  position: relative;
+  z-index: 1000;
+}

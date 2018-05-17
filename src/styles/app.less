@@ -1,0 +1,306 @@
+.page-layout-app.layout-page {
+  left: 2rem;
+  right: 2rem;
+  &>.flex-auto {
+    padding: 0;
+  }
+}
+
+table.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  .caption {
+    background: #686E7E;
+    color: #FFF;
+  }
+  td {
+    padding: 0.8rem;
+    &.label {
+      font-weight: bold;
+      background-color: #FAFAFA;
+      width: 120px;
+      &+td {
+        min-width: 100px;
+      }
+    }
+    border: 1px solid #DDD;
+  }
+  &.small {
+    td {
+      padding: 0.4rem;
+    }
+  }
+}
+
+.modal-nopadding .ivu-modal-wrap .ivu-modal {
+  .ivu-modal-content .ivu-modal-body {
+    padding: 0;
+  }
+}
+
+.detail-tabs.ivu-tabs.ivu-tabs-card {
+  &>.ivu-tabs-bar>.ivu-tabs-nav-container {
+    height: 37px;
+    .ivu-tabs-nav-wrap {
+      background-color: #686E7E;
+      padding-left: 21px;
+      padding-top: 5px;
+      .ivu-tabs-tab {
+        background-color: transparent;
+        color: #FFF;
+        border: none;
+        border-radius: 0;
+        &.ivu-tabs-tab-active {
+          background-color: #FFF;
+          color: #333;
+        }
+      }
+    }
+  }
+  .ivu-tabs-content {
+    .ivu-tabs-tabpane {
+      padding: 0 2rem;
+    }
+  }
+}
+
+.modal-tabs .ivu-tabs .ivu-tabs-nav-wrap .ivu-tabs-nav {
+  .ivu-tabs-ink-bar {
+    display: none;
+  }
+  .ivu-tabs-tab.ivu-tabs-tab-active {
+    position: relative;
+    &::after {
+      content: '\3000';
+      position: absolute;
+      .pos-fit;
+      top: auto;
+      height: 3px;
+      background-color: @mainColor;
+    }
+  }
+}
+
+.ivu-spin-table {
+  &.ivu-spin-fix {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.ivu-spin-fix {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.76);
+  .ivu-spin-main {
+    color: #FFF;
+    display: inline-block;
+    .abs-center;
+    height: auto;
+    width: auto;
+    &::after {
+      content: '加载中...';
+      color: #000;
+      display: block;
+      margin-left: 1rem;
+    }
+    .ivu-spin-dot {
+      background-color: #000;
+    }
+  }
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.ivu-table-header {
+  th.sortable>.ivu-table-cell>span {
+    cursor: pointer;
+  }
+}
+
+.ivu-table-fix-header-width {
+  .ivu-table-header>table,
+  .ivu-table-body>table {
+    width: 100%;
+  }
+}
+
+.ivu-table .ivu-table-tip>table {
+  height: 100%;
+  font-size: 1.5rem;
+  color: gray;
+}
+
+.ivu-select-disabled .ivu-select-selection {
+  background-color: #fff;
+  color: #333;
+  cursor: not-allowed;
+}
+
+.z1001 {
+  z-index: 1001;
+}
+
+.z1002 {
+  z-index: 1002;
+}
+
+.z1003 {
+  z-index: 1003
+}
+
+.z1004 {
+  z-index: 1004
+}
+
+.legend {
+  font-size: 1.2rem;
+  background-color: #686E7E;
+  color: #FFF;
+  height: 3rem;
+  line-height: 3rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ivu-row-nomrg .ivu-row {
+  margin: 0 !important;
+}
+
+//进度条不同程度颜色
+.ivu-progress.progress-warning-100 .ivu-progress-bg {
+  background-color: #FE0000;
+}
+
+.ivu-progress.progress-warning-90 .ivu-progress-bg {
+  background-color: #FE7300;
+}
+
+.ivu-progress.progress-warning-80 .ivu-progress-bg {
+  background-color: #FFB200;
+}
+
+.ivu-progress.progress-warning-70 .ivu-progress-bg {
+  background-color: #F4DB37;
+}
+
+.ivu-progress.progress-warning-60 .ivu-progress-bg {
+  background-color: #C4ED1B;
+}
+
+.ivu-progress.progress-warning-50 .ivu-progress-bg {
+  background-color: #98E922;
+}
+
+.ivu-progress.progress-warning-40 .ivu-progress-bg {
+  background-color: #24C41A;
+}
+
+.ivu-progress.progress-warning-30 .ivu-progress-bg {
+  background-color: #129712;
+}
+
+.ivu-progress.progress-warning-20 .ivu-progress-bg {
+  background-color: #039603;
+}
+
+.ivu-progress.progress-warning-10 .ivu-progress-bg {
+  background-color: rgb(7, 113, 18);
+}
+
+.ivu-progress.progress-warning-0 .ivu-progress-bg {
+  background-color: green;
+}
+
+ul.list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li.list-group-item {
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #DDD;
+    }
+    &.active {
+      background-color: @mainColor;
+      color: #FFF;
+    }
+  }
+  &:empty::after {
+    content: '暂无数据';
+    color: gray;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+//让tab适应容器
+.ivu-tabs-fit.ivu-tabs {
+  .ivu-tabs-content {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 47px;
+    bottom: 0;
+    display: flex;
+  }
+  .ivu-tabs-tabpane {
+    position: relative;
+  }
+}
+
+.ivu-message {
+  .abs-center;
+  top: 40%;
+  .ivu-message-notice-content {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .ivu-message-notice-content-text {
+    padding: 1rem;
+    min-width: 150px;
+  }
+}
+
+.tag-tabs {
+  .tag-tabs-item {
+    display: inline-block;
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    margin-right: .5rem;
+    &.active {
+      color: #FFF;
+      border-radius: 5px;
+      background-color: #F67F3C;
+    }
+  }
+}
+
+.ivu-select-item {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// 超大的按钮
+.btn-huge {
+  padding: 2rem 3rem;
+  font-size: 1.3rem;
+}
+
+.ivu-notice {
+  top: @headerHeight !important;
+}
+
+//  解决 复杂表格没数据时表头样式问题
+.custom-table-header .ivu-table-header>table {
+  min-width: 100%;
+}
+
+li.gu-mirror {
+  list-style: none;
+}
