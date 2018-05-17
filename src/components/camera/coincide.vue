@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import ViewCanvas from './canvashelpe';
+import ViewCanvas from './canvashelper';
 
 export default {
   data() {

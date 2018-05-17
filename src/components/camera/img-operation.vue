@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import ViewCanvas from './canvashelpe';
+import ViewCanvas from './canvashelper';
 import coincide from './coincide';
 import _ from 'lodash';
 
